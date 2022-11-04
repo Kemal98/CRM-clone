@@ -1,0 +1,264 @@
+html, body {
+  background-image: url("https://www.dealercraft.ca/products/images/backgrounds/crm1.jpg");
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+}
+
+#link {
+text-decoration: none;
+color: rgb(46, 46, 46);
+}
+
+/* ----- Nav ------ */
+
+nav {
+  height: 100vh;
+  position: fixed;
+  background-color: #2b2b3fba;
+  color: rgb(255,255,255);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ticket form {
+  display: flex;
+  /* flex-direction: column;
+  align-items: center; */
+}
+h1 {
+  text-align: center;
+}
+nav .logo-container,
+nav .controls-container {
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+nav .logo-container img {
+  width: 25px;
+  cursor: pointer;
+}
+
+nav .icon {
+  color: rgb(255,255,255);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+nav .icon:hover {
+  transition: 0.5s;
+  color: blue;
+}
+
+/* ----- Dashboard ------ */
+.dashboard {
+  margin-left: 10%;
+  padding: 30px;
+  width: 100%;
+}
+.dashboard .ticket-container {
+  height:80vh;
+  overflow: scroll;
+}
+/* ----- TicketCard ------ */
+.ticket-card {
+  display: flex;
+  width: 100%
+}
+.ticket-card:hover {
+  background: #ebecee;
+  transition: 0.5s;
+  /* border: 1px solid #2b2b3f36; */
+}
+
+.ticket-card #link {
+  display: flex;
+  width: 100%;
+}
+
+.ticket-card #link > * {
+  background-color: #edededc2;
+  margin: 2px;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+.ticket-card .ticket-color {
+  margin: 2px;
+  width: 2rem;
+}
+
+.ticket-card .avatar-container {
+  display: flex;
+  justify-content: center;
+  width: 80px;
+}
+
+.ticket-card .img-container {
+  height: 72px;
+  width: 69px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.ticket-card .img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.ticket-card .status-display {
+  display: flex;
+  justify-content: center;
+}
+
+.ticket-card .priority-display {
+  display: flex;
+  justify-content: center;
+}
+
+
+.ticket-card .priority-display .star-container {
+  display: flex;
+}
+
+.ticket-card .priority-display .star-container h3 {
+  margin: 7px;
+  font-size: 1.1rem;
+  padding: 0;
+  color: rgb(167, 167, 167);
+}
+
+.ticket-card .progress-display {
+  min-width: 200px;
+}
+
+.ticket-card .delete-block {
+  background-color: #edededc2;
+  width: 50px;
+  margin: 2px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.ticket-card .delete-block .delete-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: rgb(61, 61, 61);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255,255,255);
+}
+.ticket-card .delete-block .delete-icon:hover {
+  transition: 0.2s;
+  background-color: red;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+}
+
+.ticket-card .progress-bar {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(158, 158, 158);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+
+.ticket-card  .progress-bar .progress-indicator {
+  background-color: rgb(104, 104, 175);
+  height: 100%;
+}
+.ticket-card  .progress-bar .progress-indicator:hover {
+  transition: 0.2s;
+
+  background-color: #3131ab;
+}
+
+/* ----- Ticket ------ */
+
+.ticket {
+  padding: 30px;
+  width: 100%;
+}
+
+.ticket .ticket-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.ticket form section {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 24rem;
+}
+
+.ticket form label {
+  margin: 20px 0 0 0;
+}
+
+.ticket form input, select {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1.5px solid rgb(218, 218, 218);
+  margin: 5px;
+}
+
+.ticket form .multiple-input-container {
+  display: flex;
+  margin: 20px 0 20px 0;
+}
+
+.ticket .img-preview {
+  margin: 20px;
+  /* width: 200px; */
+  height: 200px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.ticket .img-preview img {
+  width: 100%;
+  height: 100%;
+}
+
+.submitBtn {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1.5px solid rgb(218, 218, 218);
+  margin: 5px;
+  cursor: pointer;
+}
+.submitBtn:hover{
+  transition: 0.5s;
+  background-color: #1983ff7a;
+  color: #Fff;
+}
+
+
+.star-container  h3 {
+  font-size: 1.5rem;
+}
+
+
