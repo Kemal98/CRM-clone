@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import TicketCard from '../components/TicketCard'
 import CategoryContext from '../context'
 
@@ -31,16 +31,38 @@ const {categories, setCategories} = useContext(CategoryContext)
     'rgb(186,225,255)',
   ]
 
+  // search category
 
+  const [quary, setQuary] = useState("")
+
+  const filterItems = useMemo(() => {
+
+    return tickets?.filter(item => {
+      return item.category.toLowerCase().includes(quary.toLocaleLowerCase())
+    })
+  }, [quary, tickets])
+
+
+console.log(filterItems)
   return (
     <div className="dashboard">
+      <div>
       <h1>Customer relationship management</h1>
+        <div className='search'>
+        <input className='searchTerm' onChange={(e) => setQuary(e.target.value) } value={quary} type="search" placeholder="search-category"/>
+        <button className='searchButton'>
+          <i className='fa fa-search'></i>
+        </button>
+      </div>
+      </div>
+      <div>{filterItems.length === 0 && 
+      <div className='categoryNone' ><p>Category does not exist</p></div>} </div>
       <div className="ticket-container">
-        {tickets &&
+        {filterItems &&
           uniqueCategories?.map((uniqueCategory, categoryIndex) => (
             <div key={categoryIndex}>
               <h3>{uniqueCategory}</h3>
-              {tickets
+              {filterItems
                 .filter((ticket) => ticket.category === uniqueCategory)
                 .map((filteredTicket, _index) => (
                   <TicketCard
